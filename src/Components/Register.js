@@ -1,26 +1,28 @@
 const Register = () => {
-    <main>
-        <form>
-            <h1>Register</h1>
+    return (
+        <main>
+            <form>
+                <h1>Register</h1>
 
-            <p>Personal info</p>
-            <label for="usernmae">Username</label>
-            <input id="username" type="text" placeholder="JustMyself123..." />
+                <p>Personal info</p>
+                <label htmlFor="usernmae">Username</label>
+                <input id="username" type="text" placeholder="JustMyself123..." />
 
-            <label for="usernmae">Password</label>
-            <input id="password" type="password" placeholder="******" />
+                <label htmlFor="usernmae">Password</label>
+                <input id="password" type="password" placeholder="******" />
 
-            <label for="repeat-password">Repeat Password</label>
-            <input id="repeat-password" type="password" placeholder="******" />
-            <hr>
+                <label htmlFor="repeat-password">Repeat Password</label>
+                <input id="repeat-password" type="password" placeholder="******" />
+                <hr></hr>
+
                 <p>Account</p>
-                <label for="amount">Amount</label>
+                <label htmlFor="amount">Amount</label>
                 <input id="amount" type="text" placeholder="$125.90" />
 
                 <button type="submit">Register</button>
-            </hr>
-        </form>
-    </main>
+            </form>
+        </main>
+    )
 }
 
 export default Register;
