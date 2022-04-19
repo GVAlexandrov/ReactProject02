@@ -12,6 +12,13 @@ const Header = () => {
                     <li>
                         <a className="right-floated" href="#">Login</a>
                     </li>
+                    <li>
+                        <a className="right-floated" href="#">[myusername profile]</a>
+                    </li>
+
+                    <li>
+                        <a className="right-floated" href="#">Logout</a>
+                    </li>
                 </ul>
             </nav >
         </header >
