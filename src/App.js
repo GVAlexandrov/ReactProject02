@@ -7,6 +7,7 @@ import Register from './Components/Register';
 import Expenses from './Components/Expenses';
 import NewExpense from './Components/NewExpense';
 import Error404 from './Components/404';
+import Profile from './Components/Profile';
 
 import style from './App.module.css';
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/login' element={<Login />} />;
         <Route path='/expenses' element={<Expenses />} />;
         <Route path='/expenses/new-expense' element={<NewExpense />} />;
+        <Route path='/profile' element={<Profile />} />;
       </Routes>
 
       <Footer />
