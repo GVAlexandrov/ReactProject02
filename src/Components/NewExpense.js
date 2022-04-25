@@ -1,4 +1,16 @@
 const NewExpense = () => {
+    let options = [
+        { option: 'Advertising', value: 'advertising' },
+        { option: 'Benefits', value: 'benefits' },
+        { option: 'Car', value: 'car' },
+        { option: 'Equipment', value: 'equipment' },
+        { option: 'Fees', value: 'fees' },
+        { option: 'Insurance', value: 'insurance' },
+        { option: 'Interest', value: 'interest' },
+        { option: 'Home Office', value: 'home-office' },
+        { option: 'Labor', value: 'labor' },
+    ]
+
     return (
         <main>
             <form>
@@ -21,15 +33,12 @@ const NewExpense = () => {
                     <label htmlFor="category">Category*</label>
                     <select name="category" id="category">
                         <option disabled selected value="default">Select category...</option>
-                        <option value="advertising">Advertising</option>
-                        <option value="benefits">Benefits</option>
-                        <option value="car">Car</option>
-                        <option value="equipment">Equipment</option>
-                        <option value="fees">Fees</option>
-                        <option value="home-office">Home Office</option>
-                        <option value="insurance">Insurance</option>
-                        <option value="interest">Interest</option>
-                        <option value="Labor">Labor</option>
+                        {options.map(x => {
+                            return (
+                                <option value={x.value}>{x.option}</option>
+                            )
+                        })}
+                        {/* 
                         <option value="maintenance">Maintenance</option>
                         <option value="materials">Materials</option>
                         <option value="meals-and-entertainment">Meals and Entertainment</option>
@@ -39,7 +48,7 @@ const NewExpense = () => {
                         <option value="rent">Rent</option>
                         <option value="taxes">Taxes</option>
                         <option value="travel">Travel</option>
-                        <option value="utilities">Utilities</option>
+                        <option value="utilities">Utilities</option> */}
                     </select>
                 </div>
 
