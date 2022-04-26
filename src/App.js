@@ -1,13 +1,13 @@
 import { Routes, Route, Switch } from 'react-router-dom';
 import Header from './Components/Header';
-import Footer from './Components/Footer';
 import Home from './Components/Home';
-import Login from './Components/Login';
+import Footer from './Components/Footer';
 import Register from './Components/Register';
-import Expenses from './Components/Expenses';
+import Login from './Components/Login';
 import NewExpense from './Components/NewExpense';
-import Error404 from './Components/404';
+import Expenses from './Components/Expenses';
 import Profile from './Components/Profile';
+import Error404 from './Components/404';
 
 import style from './App.module.css';
 
@@ -18,7 +18,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />} />;
-        <Route exact path='/register' element={<Register />} />;
+        <Route path='/register' element={<Register />} />;
         <Route path='/login' element={<Login />} />;
         <Route path='/expenses' element={<Expenses />} />;
         <Route path='/expenses/new-expense' element={<NewExpense />} />;
