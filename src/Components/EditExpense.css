@@ -1,0 +1,14 @@
+form h1 {
+  font-size: 40px;
+  text-decoration: underline;
+  margin-bottom: 2%;
+  color: #ffa000;
+}
+
+form div.form-control {
+  width: 30%;
+  margin: 0 auto;
+  margin-bottom: 1%;
+  display: block;
+  font-size: 20px;
+}
