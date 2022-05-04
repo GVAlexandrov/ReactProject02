@@ -23,6 +23,7 @@ function App() {
   }, []);
 
   return (
+
     <div className={style.app}>
       <Header userEmail={userEmail} setUserEmail={setUserEmail} />
 
@@ -34,12 +35,13 @@ function App() {
         <Route path='/expenses' element={<Expenses />} />;
         <Route path='/expenses/:id/details' element={<ExpenseDetails />} />;
         <Route path='/expenses/:id/details/edit' element={<EditExpense />} />;
-
         <Route path='/profile' element={<Profile />} />;
+        <Route path='/*' element={<Error404 />} />;
       </Routes>
 
       <Footer />
     </div >
+
   );
 }
 
