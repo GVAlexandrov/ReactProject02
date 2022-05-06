@@ -1,38 +1,74 @@
-import { Link } from "react-router-dom";
+import { NavLink, useNavigate } from 'react-router-dom';
+import { auth, firebaseSignOut } from '../config/firebaseInit';
+import { logout } from '../services/authService';
 
-const Header = () => {
+
+const Header = ({
+    userEmail,
+    setUserEmail
+}) => {
+    const navigate = useNavigate();
+
+    const links = [
+        { menuName: "Register", path: "/register", isAuth: false },
+        { menuName: "Login", path: "/login", isAuth: false },
+        { menuName: userEmail?.email, path: "/profile", isAuth: true },
+        { menuName: "My Expenses", path: "/expenses", isAuth: true },
+    ]
+
+    function logOutHandler(e) {
+        e.preventDefault();
+        logout();
+        setUserEmail(null);
+        localStorage.removeItem("email");
+        localStorage.removeItem("uid");
+        navigate('/');
+    }
+
     return (
         <header>
             <nav>
-                <ul>
-                    <li>
-                        <Link id="home" className="left-floated" to="/">MoneyGone</Link>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <Link className="right-floated" to="/login">Login</Link>
-                    </li>
-                    <li>
-                        <Link className="right-floated" to="/register">Register</Link>
-                    </li>
-                    <li>
-                        <Link className="right-floated" to="/expenses">Expenses</Link>
-                    </li>
-                    <li>
-                        <Link className="right-floated" to="/expenses/new-expense">New Expense</Link>
-                    </li>
-                    <li>
-                        {/* <a className="right-floated" href="#">[myusername profile]</a> */}
-                        <Link className="right-floated" to="/profile">[myusername profile]</Link>
-                    </li>
 
-                    <li>
-                        <a className="right-floated" href="#">Logout</a>
+
+                <ul>
+                    <li key="MoneySafe">
+                        <NavLink id="home" className="left-floated" to="/">MoneySafe</NavLink>
                     </li>
                 </ul>
-            </nav >
-        </header >
+
+
+                <ul>
+                    {
+                        links.map(link => {
+                            if (userEmail !== null && link.isAuth) {
+                                return (
+                                    <li key={link.menuName}>
+                                        <NavLink className="right-floated" to={link.path}>{link.menuName}</NavLink>
+                                    </li>
+                                );
+
+                            } else if (userEmail === null && !link.isAuth) {
+                                return (
+                                    <li key={link.menuName}>
+                                        <NavLink className="right-floated" to={link.path}>{link.menuName}</NavLink>
+                                    </li>
+                                );
+                            }
+
+                            return '';
+                        })
+                    }
+
+                    {(userEmail !== null)
+                        ? <li key="Logout">
+                            <a className="right-floated" href="#" onClick={logOutHandler} >Logout</a>
+                        </li>
+                        : ''
+                    }
+                </ul>
+
+            </nav>
+        </header>
     );
 };
 
