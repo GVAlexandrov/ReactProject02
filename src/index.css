@@ -60,7 +60,7 @@ main {
   padding-top: 7vh;
   width: 100%;
   min-height: 750px;
-  background: linear-gradient(rgba(65, 9, 9, 0.7) 100%, rgba(0, 0, 0, 0.5) 100%),
+  background: linear-gradient(rgba(19, 3, 3, 0.7) 100%, rgba(0, 0, 0, 0.5) 100%),
     url('./images/header02.jpg');
   background-position: center;
   background-size: cover;
@@ -430,7 +430,8 @@ img.sad-face {
 .notifications {
   display: block;
   margin: 0 auto;
-  background-color: rgb(236, 129, 129);
+  background-color: rgb(71, 33, 33);
+  opacity: 80%;
   border-radius: 6px;
   width: 50%;
   margin-top: 3%;
